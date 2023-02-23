@@ -1,0 +1,85 @@
+{
+    "cars": [
+        {
+            "name": "جيلى",
+            "avatarUrl": "assets/images/Image 1.png",
+            "seen": false,
+            "price": "2000",
+            "year": "2019",
+            "time": "2021",
+            "km": "2000"
+        },
+        {
+            "name": "بى ام دبليو",
+            "avatarUrl": "assets/images/Image 11.png",
+            "seen": false,
+            "price": "2000",
+            "year": "2019",
+            "time": "2021",
+            "km": "2000"
+        },
+        {
+            "name": "تويوتا",
+            "avatarUrl": "assets/images/Image 6.png",
+            "seen": false,
+            "price": "2019",
+            "year": "2019",
+            "time": "2021",
+            "km": "2000"
+        },
+        {
+            "name": "جيلى",
+            "avatarUrl": "assets/images/Image 1.png",
+            "seen": false,
+            "price": "2000",
+            "year": "2019",
+            "time": "2021",
+            "km": "2000"
+        },
+        {
+            "name": "بى ام دبليو",
+            "avatarUrl": "assets/images/Image 11.png",
+            "seen": false,
+            "price": "2000",
+            "year": "2019",
+            "time": "2021",
+            "km": "2000"
+        },
+        {
+            "name": "تويوتا",
+            "avatarUrl": "assets/images/Image 6.png",
+            "seen": false,
+            "price": "2019",
+            "year": "2019",
+            "time": "2021",
+            "km": "2000"
+        },
+        {
+            "name": "جيلى",
+            "avatarUrl": "assets/images/Image 1.png",
+            "seen": false,
+            "price": "2000",
+            "year": "2019",
+            "time": "2021",
+            "km": "2000"
+        },
+        {
+            "name": "بى ام دبليو",
+            "avatarUrl": "assets/images/Image 11.png",
+            "seen": false,
+            "price": "2000",
+            "year": "2019",
+            "time": "2021",
+            "km": "2000"
+        },
+        {
+            "name": "تويوتا",
+            "avatarUrl": "assets/images/Image 6.png",
+            "seen": false,
+            "price": "2019",
+            "year": "2019",
+            "time": "2021",
+            "km": "2000"
+        }
+    ]
+}
