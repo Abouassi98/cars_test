@@ -1,6 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
+import '../custom_appbar.dart';
 import '../empty_appbar_widget.dart';
 import 'platform_base_widget.dart';
 
@@ -26,12 +27,11 @@ class PlatformScaffold extends PlatformBaseWidget<Scaffold, Widget> {
   Scaffold createMaterialWidget(BuildContext context) {
     return Scaffold(
       key: widgetKey,
-      
       appBar: platformAppBar ?? hasEmptyAppbar
           ? EmptyAppBar(
               statusBarColor: materialData?.statusBarColor,
             )
-          : null,
+          :  const CustomAppBar(),
       body: body,
       floatingActionButton: materialData?.floatingActionButton,
       drawer: materialData?.drawer,

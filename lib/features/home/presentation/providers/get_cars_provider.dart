@@ -1,6 +1,5 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-import '../../data/models/car_model.dart';
 
 import '../../domain/entities/car.dart';
 import '../../domain/use_case/get_car_uc.dart';

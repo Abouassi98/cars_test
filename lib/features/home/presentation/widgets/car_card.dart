@@ -5,8 +5,6 @@ import '../../../../core/presentation/widgets/custom_container.dart';
 
 import '../../domain/entities/car.dart';
 
-
-
 class CustomCarCard extends StatelessWidget {
   final Car carData;
   final bool isHome;
@@ -17,7 +15,7 @@ class CustomCarCard extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          margin:  EdgeInsets.only(bottom:isHome==true? 20:25),
+          margin: EdgeInsets.only(bottom: isHome == true ? 20 : 25),
           decoration: BoxDecoration(
               image: DecorationImage(
                   image: AssetImage(
@@ -82,36 +80,46 @@ class CustomCarCard extends StatelessWidget {
             bottom: 0,
             child: Row(
               textDirection: TextDirection.rtl,
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
-                 Visibility(
+                Visibility(
                   visible: !isHome,
                   child: CustomContainer(
-                      image: AppImages.carContainerIcon4,
-                      text: 'المحرك/سلندر',
-                      num: carData.time, isHome: isHome,),
+                    image: AppImages.carContainerIcon4,
+                    text: 'المحرك/سلندر',
+                    num: carData.time,
+                    isHome: isHome,
+                  ),
                 ),
                 Visibility(
                   visible: isHome,
                   child: CustomContainer(
-                      image: AppImages.carContainerIcon0,
-                      text: 'السعر',
-                      num: carData.price,isHome: isHome,),
+                    image: AppImages.carContainerIcon0,
+                    text: 'السعر',
+                    num: carData.price,
+                    isHome: isHome,
+                  ),
                 ),
                 CustomContainer(
-                    image: AppImages.carContainerIcon1,
-                    text: isHome == true ? 'الصنع' : 'سنة الصنع',
-                    num: carData.year,isHome: isHome,),
+                  image: AppImages.carContainerIcon1,
+                  text: isHome == true ? 'الصنع' : 'سنة الصنع',
+                  num: carData.year,
+                  isHome: isHome,
+                ),
                 CustomContainer(
-                    image: AppImages.carContainerIcon2,
-                    text: isHome == true ? 'كم' : 'الممشى',
-                    num: carData.km,isHome: isHome,),
+                  image: AppImages.carContainerIcon2,
+                  text: isHome == true ? 'كم' : 'الممشى',
+                  num: carData.km,
+                  isHome: isHome,
+                ),
                 Visibility(
                   visible: isHome,
                   child: CustomContainer(
-                      image: AppImages.carContainerIcon3,
-                      text: 'مكفولة',
-                      num: carData.time,isHome: isHome,),
+                    image: AppImages.carContainerIcon3,
+                    text: 'مكفولة',
+                    num: carData.time,
+                    isHome: isHome,
+                  ),
                 ),
               ],
             ))

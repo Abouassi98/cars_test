@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
-import 'car_detail_item.dart';
+import '../widgets/car_detail_item.dart';
 
-class CarDetailsContainer extends StatelessWidget {
-  const CarDetailsContainer({
+
+class CarDetailsComponent extends StatelessWidget {
+  const CarDetailsComponent({
     super.key,
   });
 

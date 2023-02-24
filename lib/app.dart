@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_platform_widgets/flutter_platform_widgets.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-import 'features/home/presentation/pages/home.dart';
+import 'features/home/presentation/screens/home_screen.dart';
 
 class MyApp extends HookConsumerWidget {
   const MyApp({Key? key}) : super(key: key);
@@ -20,7 +20,7 @@ class MyApp extends HookConsumerWidget {
       },
       title: 'Cars',
       color: Theme.of(context).colorScheme.primary,
-      home: const MyHomePage(),
+      home: const HomeScreen(),
       debugShowCheckedModeBanner: false,
     );
   }

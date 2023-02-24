@@ -2,27 +2,23 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import '../../../../core/presentation/screens/full_screen_platfom_scaffold.dart';
 import '../../../../core/presentation/styles/app_images.dart';
 import 'package:flutter/material.dart';
-
-import '../../../../core/presentation/widgets/custom_appbar.dart';
 import '../../../../core/presentation/widgets/custom_text.dart';
 import '../../../../core/presentation/widgets/loading_indicators.dart';
-import '../../../../core/presentation/widgets/search_bar.dart';
-
-import '../components/car_card.dart';
-
-import '../components/story_screen_ui.dart';
+import '../../../../core/presentation/widgets/custom_search_bar.dart';
+import '../components/story_screen_component.dart';
+import '../components/tabs_components.dart';
 import '../providers/get_cars_provider.dart';
-import 'car_details.dart';
+import '../widgets/car_card.dart';
+import 'car_details_screen.dart';
 
-class MyHomePage extends ConsumerWidget {
-  const MyHomePage({super.key});
+class HomeScreen extends ConsumerWidget {
+  const HomeScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final getCars = ref.watch(getCarsProvider);
     return FullScreenPlatformScaffold(
-      platformAppBar: const PreferredSize(
-          preferredSize: Size(double.infinity, 50), child: CustomAppBar()),
+      hasEmptyAppbar: false,
       body: getCars.when(
           skipLoadingOnReload: true,
           skipLoadingOnRefresh: !getCars.hasError,
@@ -42,56 +38,14 @@ class MyHomePage extends ConsumerWidget {
                     children: [
                       Padding(
                         padding: const EdgeInsets.only(top: 20),
-                        child: StoryScreenUI(cars: upcomingOrders),
+                        child: StoryScreenComponent(cars: upcomingOrders),
                       ),
                       Image.asset(
                         AppImages.carIcon3,
                         width: double.infinity,
                       ),
-                      const SearchBar(),
-                      Row(
-                          mainAxisAlignment: MainAxisAlignment.spaceAround,
-                          children: [
-                            Container(
-                              padding: const EdgeInsets.symmetric(
-                                  vertical: 3, horizontal: 30),
-                              decoration: BoxDecoration(
-                                  color: Colors.grey[800],
-                                  borderRadius: const BorderRadius.all(
-                                      Radius.circular(20))),
-                              child: const Text(
-                                'اسيوي',
-                                style: TextStyle(
-                                    color: Colors.white, fontSize: 15),
-                              ),
-                            ),
-                            Container(
-                              padding: const EdgeInsets.symmetric(
-                                  vertical: 3, horizontal: 30),
-                              decoration: BoxDecoration(
-                                  color: Colors.grey[800],
-                                  borderRadius: const BorderRadius.all(
-                                      Radius.circular(20))),
-                              child: const Text(
-                                'اوروبى',
-                                style: TextStyle(
-                                    color: Colors.white, fontSize: 15),
-                              ),
-                            ),
-                            Container(
-                              padding: const EdgeInsets.symmetric(
-                                  vertical: 3, horizontal: 30),
-                              decoration: BoxDecoration(
-                                  color: Colors.grey[800],
-                                  borderRadius: const BorderRadius.all(
-                                      Radius.circular(20))),
-                              child: const Text(
-                                'امريكى',
-                                style: TextStyle(
-                                    color: Colors.white, fontSize: 15),
-                              ),
-                            ),
-                          ]),
+                      const CustomSearchBar(),
+                      const TabsComponent(),
                       GridView.builder(
                         physics: const NeverScrollableScrollPhysics(),
                         padding: const EdgeInsets.symmetric(vertical: 10),
@@ -111,7 +65,7 @@ class MyHomePage extends ConsumerWidget {
                               onTap: () {
                                 Navigator.push(context, MaterialPageRoute(
                                   builder: (context) {
-                                    return CarDetails(
+                                    return CarDetailsScreen(
                                       carData: upcomingOrders[index],
                                     );
                                   },
