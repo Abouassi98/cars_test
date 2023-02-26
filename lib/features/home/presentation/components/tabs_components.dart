@@ -14,16 +14,21 @@ class TabsComponent extends HookConsumerWidget {
     final tabController =
         useTabController(initialLength: 3, vsync: useSingleTickerProvider());
 
-    return TabBar(isScrollable: false, physics: const NeverScrollableScrollPhysics(),controller: tabController, tabs: const [
-      Tab(
-        child: CustomTab(text: 'اسيوي'),
-      ),
-      Tab(
-        child: CustomTab(text: 'اوروبى'),
-      ),
-      Tab(
-        child: CustomTab(text: 'امريكى'),
-      ),
-    ]);
+    return TabBar(
+        isScrollable: false,
+        physics: const NeverScrollableScrollPhysics(),
+        indicatorColor: Colors.white,
+        controller: tabController,
+        tabs: const [
+          Tab(
+            child: CustomTab(text: 'اسيوي'),
+          ),
+          Tab(
+            child: CustomTab(text: 'اوروبى'),
+          ),
+          Tab(
+            child: CustomTab(text: 'امريكى'),
+          ),
+        ]);
   }
 }
