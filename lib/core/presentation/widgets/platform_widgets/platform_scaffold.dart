@@ -28,10 +28,10 @@ class PlatformScaffold extends PlatformBaseWidget<Scaffold, Widget> {
     return Scaffold(
       key: widgetKey,
       appBar: platformAppBar ?? hasEmptyAppbar
-          ? EmptyAppBar(
-              statusBarColor: materialData?.statusBarColor,
+          ? const EmptyAppBar(
+              statusBarColor: Colors.white,
             )
-          :  const CustomAppBar(),
+          : const CustomAppBar(),
       body: body,
       floatingActionButton: materialData?.floatingActionButton,
       drawer: materialData?.drawer,

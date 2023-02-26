@@ -1,7 +1,9 @@
+import 'package:flutter_svg/svg.dart';
+
 import '../../../../core/presentation/styles/app_images.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../core/presentation/widgets/custom_container.dart';
+import 'custom_container.dart';
 
 import '../../domain/entities/car.dart';
 
@@ -15,18 +17,20 @@ class CustomCarCard extends StatelessWidget {
     return Stack(
       children: [
         Container(
-          margin: EdgeInsets.only(bottom: isHome == true ? 20 : 25),
+          height: isHome
+              ? MediaQuery.of(context).size.height * 0.15
+              : MediaQuery.of(context).size.height * 0.22,
           decoration: BoxDecoration(
               image: DecorationImage(
                   image: AssetImage(
                     carData.avatarUrl,
                   ),
-                  fit: BoxFit.fill)),
+                  fit: isHome ? BoxFit.cover : BoxFit.fill)),
         ),
         isHome == true
             ? Container(
                 width: double.infinity,
-                color: Colors.white.withOpacity(0.8),
+                color: Colors.white.withOpacity(0.7),
                 child: const Text(
                   'جى ام سى | يوكن | الفئة الرابعه',
                   maxLines: 1,
@@ -41,21 +45,19 @@ class CustomCarCard extends StatelessWidget {
                     Row(
                       children: [
                         CircleAvatar(
-                            radius: 20,
                             backgroundColor: Colors.white.withOpacity(0.6),
-                            child: const Icon(
-                              Icons.favorite_border,
-                              color: Colors.black,
+                            child: SvgPicture.asset(
+                              AppImages.carContainerIcon6,
+                              height: 20,
                             )),
                         const SizedBox(
                           width: 10,
                         ),
                         CircleAvatar(
-                            radius: 20,
                             backgroundColor: Colors.white.withOpacity(0.6),
-                            child: const Icon(
-                              Icons.reply_sharp,
-                              color: Colors.black,
+                            child: SvgPicture.asset(
+                              AppImages.carContainerIcon5,
+                              height: 20,
                             )),
                       ],
                     ),
@@ -75,12 +77,13 @@ class CustomCarCard extends StatelessWidget {
                 ),
               ),
         Positioned(
-            left: 0,
-            right: 0,
             bottom: 0,
+            right: 0,
+            left: 0,
             child: Row(
               textDirection: TextDirection.rtl,
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.center,
+              
               children: [
                 Visibility(
                   visible: !isHome,
@@ -102,7 +105,7 @@ class CustomCarCard extends StatelessWidget {
                 ),
                 CustomContainer(
                   image: AppImages.carContainerIcon1,
-                  text: isHome == true ? 'الصنع' : 'سنة الصنع',
+                  text: 'سنة الصنع',
                   num: carData.year,
                   isHome: isHome,
                 ),
@@ -116,7 +119,7 @@ class CustomCarCard extends StatelessWidget {
                   visible: isHome,
                   child: CustomContainer(
                     image: AppImages.carContainerIcon3,
-                    text: 'مكفولة',
+                    text: ' مكفولة لـ',
                     num: carData.time,
                     isHome: isHome,
                   ),

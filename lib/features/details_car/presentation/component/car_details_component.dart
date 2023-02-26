@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/presentation/widgets/custom_text.dart';
 import '../widgets/car_detail_item.dart';
-
 
 class CarDetailsComponent extends StatelessWidget {
   const CarDetailsComponent({
@@ -11,47 +11,35 @@ class CarDetailsComponent extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: const [
+      children: [
         CarDetailsItem(
           icon: Icons.no_crash_rounded,
           text: 'اللون الخارجى',
-          child: Text(
+          child: CustomText.f14(
+            context,
             'ابيض',
-            style: TextStyle(
-              fontSize: 15,
-              color: Colors.black,
-              fontWeight: FontWeight.w400,
-            ),
             textAlign: TextAlign.center,
           ),
         ),
         CarDetailsItem(
           icon: Icons.no_crash_rounded,
           text: 'اللون الداخلى',
-          child: Text(
+          child: CustomText.f14(
+            context,
             'بيج',
-            style: TextStyle(
-              fontSize: 15,
-              color: Colors.black,
-              fontWeight: FontWeight.w400,
-            ),
             textAlign: TextAlign.center,
           ),
         ),
         CarDetailsItem(
           icon: Icons.no_crash_rounded,
           text: 'نوع المقعد',
-          child: Text(
+          child: CustomText.f14(
+            context,
             'مخملى',
-            style: TextStyle(
-              fontSize: 15,
-              color: Colors.black,
-              fontWeight: FontWeight.w400,
-            ),
             textAlign: TextAlign.center,
           ),
         ),
-        CarDetailsItem(
+        const CarDetailsItem(
           icon: Icons.no_crash_rounded,
           text: 'فتحة سقف',
           child: Icon(
@@ -59,7 +47,7 @@ class CarDetailsComponent extends StatelessWidget {
             color: Colors.black,
           ),
         ),
-        CarDetailsItem(
+        const CarDetailsItem(
             icon: Icons.no_crash_rounded,
             text: 'كاميرا خلفية',
             child: Icon(
@@ -69,37 +57,25 @@ class CarDetailsComponent extends StatelessWidget {
         CarDetailsItem(
           icon: Icons.no_crash_rounded,
           text: 'سينسر',
-          child: Text(
+          child: CustomText.f14(
+            context,
             'امامى-خلفى',
-            style: TextStyle(
-              fontSize: 15,
-              color: Colors.black,
-              fontWeight: FontWeight.w400,
-            ),
           ),
         ),
         CarDetailsItem(
           icon: Icons.no_crash_rounded,
           text: 'سليندر',
-          child: Text(
+          child: CustomText.f14(
+            context,
             '6',
-            style: TextStyle(
-              fontSize: 15,
-              color: Colors.black,
-              fontWeight: FontWeight.w400,
-            ),
           ),
         ),
         CarDetailsItem(
           icon: Icons.no_crash_rounded,
           text: 'ناقل حركة',
-          child: Text(
+          child: CustomText.f14(
+            context,
             'اتوماتيك',
-            style: TextStyle(
-              fontSize: 15,
-              color: Colors.black,
-              fontWeight: FontWeight.w400,
-            ),
           ),
         ),
       ],

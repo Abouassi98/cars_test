@@ -15,32 +15,32 @@ class CustomContainer extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       alignment: Alignment.center,
-      margin:  EdgeInsets.symmetric(horizontal: isHome == true ?1:8),
+      margin: isHome == true
+          ? const EdgeInsets.only(right: 1)
+          : const EdgeInsets.symmetric(horizontal: 8),
       padding: EdgeInsets.symmetric(
-          horizontal: isHome == true ? 5 : 15, vertical: 5),
+          horizontal: isHome == true ? 8 : 15, vertical: 5),
       decoration: BoxDecoration(
-          color: Colors.white.withOpacity(0.8),
+          color: Colors.grey[200],
           borderRadius: const BorderRadius.all(Radius.circular(5))),
       child: Column(
         //mainAxisSize: MainAxisSize.min,
         children: [
           SvgPicture.asset(
             image,
-            height: isHome == true ? 15 : 22,
+            height: isHome == true ? 10 : 22,
             width: isHome == true ? 10 : 20,
           ),
           Text(
             text,
             style: TextStyle(
-                fontWeight: FontWeight.w200,
-                height: 1.2,
-                fontSize: isHome == true ? 12 : 15),
+                fontWeight: FontWeight.w500,
+                fontSize: isHome == true ? 10 : 15),
           ),
           Text(
             num,
             style: TextStyle(
                 fontWeight: FontWeight.bold,
-                height: 1,
                 fontSize: isHome == true ? 12 : 15),
           ),
         ],

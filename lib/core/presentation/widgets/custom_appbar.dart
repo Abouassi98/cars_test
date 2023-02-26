@@ -34,7 +34,6 @@ class CustomAppBar extends StatelessWidget
   }
 
   @override
-  // TODO: implement preferredSize
   Size get preferredSize => const Size.fromHeight(Sizes.appBarButtonR32);
 
   @override

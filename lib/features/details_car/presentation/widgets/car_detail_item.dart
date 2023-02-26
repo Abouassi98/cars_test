@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/presentation/widgets/custom_text.dart';
+
 class CarDetailsItem extends StatelessWidget {
   final IconData icon;
   final String text;
@@ -16,16 +18,17 @@ class CarDetailsItem extends StatelessWidget {
     //Icons.no_crash_rounded
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 3),
-      margin: const EdgeInsets.symmetric(horizontal: 20, vertical: 1).copyWith(left: 0),
+      margin: const EdgeInsets.symmetric(horizontal: 25, vertical: 1)
+          .copyWith(left: 0),
       decoration: BoxDecoration(
-          color: Colors.grey.withOpacity(0.2),
-          borderRadius: const BorderRadius.all(Radius.circular(8))),
+        color: Colors.grey.withOpacity(0.1),
+      ),
       child: Row(
         textDirection: TextDirection.rtl,
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           SizedBox(
-            width: 150,
+            width: MediaQuery.of(context).size.width * 0.35,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               textDirection: TextDirection.rtl,
@@ -38,25 +41,14 @@ class CarDetailsItem extends StatelessWidget {
                 const SizedBox(
                   width: 10,
                 ),
-                Text(
+                CustomText.f14(
+                  context,
                   text,
-                  style: const TextStyle(
-                    fontSize: 15,
-                    color: Colors.black,
-                    fontWeight: FontWeight.w400,
-                  ),
                 ),
               ],
             ),
           ),
-          // const SizedBox(
-          //   width: 50,
-          // ),
-          Container(
-            width: 90,
-             
-              alignment: Alignment.center,
-              child: child)
+          Container(width: 90, alignment: Alignment.center, child: child)
         ],
       ),
     );

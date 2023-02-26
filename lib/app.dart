@@ -9,6 +9,7 @@ class MyApp extends HookConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+      
     return PlatformApp(
       builder: (_, child) {
         return GestureDetector(
@@ -19,7 +20,7 @@ class MyApp extends HookConsumerWidget {
         );
       },
       title: 'Cars',
-      color: Theme.of(context).colorScheme.primary,
+      
       home: const HomeScreen(),
       debugShowCheckedModeBanner: false,
     );

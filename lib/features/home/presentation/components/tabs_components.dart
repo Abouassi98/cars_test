@@ -1,42 +1,28 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_hooks/flutter_hooks.dart';
+import 'package:hooks_riverpod/hooks_riverpod.dart';
 
-class TabsComponent extends StatelessWidget {
+import '../widgets/custom_tab.dart';
+
+class TabsComponent extends HookConsumerWidget {
   const TabsComponent({
     Key? key,
   }) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return Row(mainAxisAlignment: MainAxisAlignment.spaceAround, children: [
-      Container(
-        padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 30),
-        decoration: BoxDecoration(
-            color: Colors.grey[800],
-            borderRadius: const BorderRadius.all(Radius.circular(20))),
-        child: const Text(
-          'اسيوي',
-          style: TextStyle(color: Colors.white, fontSize: 15),
-        ),
+  Widget build(BuildContext context, WidgetRef ref) {
+    final tabController =
+        useTabController(initialLength: 3, vsync: useSingleTickerProvider());
+
+    return TabBar(isScrollable: false, physics: const NeverScrollableScrollPhysics(),controller: tabController, tabs: const [
+      Tab(
+        child: CustomTab(text: 'اسيوي'),
       ),
-      Container(
-        padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 30),
-        decoration: BoxDecoration(
-            color: Colors.grey[800],
-            borderRadius: const BorderRadius.all(Radius.circular(20))),
-        child: const Text(
-          'اوروبى',
-          style: TextStyle(color: Colors.white, fontSize: 15),
-        ),
+      Tab(
+        child: CustomTab(text: 'اوروبى'),
       ),
-      Container(
-        padding: const EdgeInsets.symmetric(vertical: 3, horizontal: 30),
-        decoration: BoxDecoration(
-            color: Colors.grey[800],
-            borderRadius: const BorderRadius.all(Radius.circular(20))),
-        child: const Text(
-          'امريكى',
-          style: TextStyle(color: Colors.white, fontSize: 15),
-        ),
+      Tab(
+        child: CustomTab(text: 'امريكى'),
       ),
     ]);
   }

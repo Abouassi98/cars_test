@@ -26,8 +26,6 @@ IGetCarLocalDataSource getCarLocalDataSource(GetCarLocalDataSourceRef ref) {
 class GetCarLocalDataSource implements IGetCarLocalDataSource {
   GetCarLocalDataSource();
 
-  static const String userDataKey = 'user_data';
-
   @override
   Future<CarItemsModel> getCar() async {
     String response = await rootBundle.loadString('assets/json/sample.json');

@@ -7,10 +7,11 @@ import '../../../../core/presentation/styles/app_images.dart';
 import '../../../../core/presentation/styles/sizes.dart';
 
 import '../../../../core/presentation/widgets/custom_text.dart';
-import '../../domain/entities/car.dart';
+import '../../../home/domain/entities/car.dart';
 
-import '../components/car_details_component.dart';
-import '../widgets/car_card.dart';
+import '../component/bottom_details_component.dart';
+import '../component/car_details_component.dart';
+import '../../../home/presentation/widgets/car_card.dart';
 
 class CarDetailsScreen extends StatelessWidget {
   final Car carData;
@@ -26,6 +27,7 @@ class CarDetailsScreen extends StatelessWidget {
       body: CustomScrollView(
         slivers: <Widget>[
           SliverAppBar(
+            automaticallyImplyLeading: false,
             backgroundColor: Colors.white,
             expandedHeight: Sizes.appBarHeight250,
             flexibleSpace: FlexibleSpaceBar(
@@ -64,10 +66,13 @@ class CarDetailsScreen extends StatelessWidget {
                                 const SizedBox(
                                   width: 3,
                                 ),
-                                CustomText.f18(
-                                  context,
-                                  'د.ك',
-                                  weight: FontWeight.w200,
+                                Padding(
+                                  padding: const EdgeInsets.only(top: 8.0),
+                                  child: CustomText.f14(
+                                    context,
+                                    'د.ك',
+                                    weight: FontWeight.w200,
+                                  ),
                                 ),
                               ],
                             ),
@@ -91,8 +96,7 @@ class CarDetailsScreen extends StatelessWidget {
                             SvgPicture.asset(
                               AppImages.carContainerIcon3,
                               height: 20,
-                              colorFilter: const ColorFilter.mode(
-                                  Colors.white, BlendMode.color),
+                              color: Colors.white,
                             ),
                             const SizedBox(
                               width: 25,
@@ -125,15 +129,19 @@ class CarDetailsScreen extends StatelessWidget {
                         decoration: BoxDecoration(
                             color: Colors.grey.withOpacity(0.2),
                             borderRadius:
-                                const BorderRadius.all(Radius.circular(20))),
+                                const BorderRadius.all(Radius.circular(10))),
                         child: Row(
                           textDirection: TextDirection.rtl,
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             const CircleAvatar(
-                              radius: 15,
-                              backgroundImage: AssetImage(AppImages.carIcon1),
-                            ),
+                                radius: 18,
+                                backgroundColor: Colors.white,
+                                child: CircleAvatar(
+                                  radius: 15,
+                                  backgroundImage:
+                                      AssetImage(AppImages.carIcon1),
+                                )),
                             CustomText.f14(
                               context,
                               'يوكن للسيارات المعتمدة',
@@ -157,10 +165,11 @@ class CarDetailsScreen extends StatelessWidget {
           ),
           SliverGrid(
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                crossAxisCount: 2,
-                crossAxisSpacing: 2,
-                mainAxisSpacing: 2,
-                childAspectRatio: 1),
+              crossAxisCount: 2,
+              crossAxisSpacing: 1,
+              mainAxisSpacing: 5,
+              childAspectRatio: 1.2,
+            ),
             delegate: SliverChildBuilderDelegate(
               (BuildContext context, int index) {
                 return CustomCarCard(
@@ -171,6 +180,11 @@ class CarDetailsScreen extends StatelessWidget {
               childCount: 2,
             ),
           ),
+          SliverList(
+              delegate:
+                  SliverChildBuilderDelegate(childCount: 1, (_, int index) {
+            return const BottomDetailsComponent();
+          }))
         ],
       ),
     );
