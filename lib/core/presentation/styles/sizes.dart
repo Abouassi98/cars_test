@@ -2,12 +2,27 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 
+import '../services/responsive_service.dart';
+
 abstract class Sizes {
   static final double statusBarHeight =
       MediaQueryData.fromWindow(window).padding.top;
 
   static final double homeIndicatorHeight =
       MediaQueryData.fromWindow(window).viewPadding.bottom;
+
+        static fullScreenHeight(BuildContext context) =>
+      ResponsiveService.fullScreenHeight(context);
+
+  static fullScreenWidth(BuildContext context) =>
+      ResponsiveService.fullScreenWidth(context);
+
+  static availableScreenHeight(BuildContext context) =>
+      ResponsiveService.availableScreenHeight(context);
+
+  static availableScreenWidth(BuildContext context) =>
+      ResponsiveService.availableScreenWidth(context);
+
 
   //Font Size
   static const double font28 = 28.0;

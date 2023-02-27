@@ -1,10 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:flutter_svg/svg.dart';
 
 import '../styles/app_images.dart';
 import '../styles/sizes.dart';
+import 'cusomt_svg_image.dart';
 
 class CustomAppBar extends StatelessWidget
     implements PreferredSizeWidget, ObstructingPreferredSizeWidget {
@@ -16,16 +16,20 @@ class CustomAppBar extends StatelessWidget
       backgroundColor: Colors.grey,
       title: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
-        children: [
+        children: const [
           Badge(
-              backgroundColor: Colors.red,
-              label: const Text('1'),
-              child: SvgPicture.asset(AppImages.appBarIcon1, height: 25)),
-          SvgPicture.asset(
-            AppImages.appBarIcon2,
+            backgroundColor: Colors.red,
+            label: Text('1'),
+            child: CustomSvgImage(
+              path: AppImages.appBarIcon1,
+              height: 25,
+            ),
+          ),
+          CustomSvgImage(
+            path: AppImages.appBarIcon2,
             height: 15,
             width: 10,
-          ),
+          )
         ],
       ),
       systemOverlayStyle:

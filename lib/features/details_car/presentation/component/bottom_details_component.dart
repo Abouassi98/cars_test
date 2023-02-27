@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
 
 import '../../../../core/presentation/styles/app_images.dart';
+import '../../../../core/presentation/styles/sizes.dart';
+import '../../../../core/presentation/widgets/cusomt_svg_image.dart';
 import '../../../../core/presentation/widgets/custom_text.dart';
 
 class BottomDetailsComponent extends StatelessWidget {
@@ -17,10 +18,10 @@ class BottomDetailsComponent extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         textDirection: TextDirection.rtl,
         children: [
-          CircleAvatar(
+          const CircleAvatar(
             backgroundColor: Colors.greenAccent,
-            child: SvgPicture.asset(
-              AppImages.carContainerIcon7,
+            child: CustomSvgImage(
+              path: AppImages.callIcon7,
               height: 20,
             ),
           ),
@@ -31,8 +32,8 @@ class BottomDetailsComponent extends StatelessWidget {
             ),
           ),
           Container(
-            height: MediaQuery.of(context).size.height * 0.04,
-            width: MediaQuery.of(context).size.width * 0.3,
+            height: Sizes.availableScreenHeight(context) * 0.04,
+            width: Sizes.availableScreenWidth(context) * 0.3,
             decoration: BoxDecoration(
                 color: Colors.grey[800],
                 borderRadius: const BorderRadius.all(Radius.circular(20))),
@@ -44,8 +45,8 @@ class BottomDetailsComponent extends StatelessWidget {
                   'موقع السياره',
                   color: Colors.white,
                 ),
-                SvgPicture.asset(
-                  AppImages.carContainerIcon8,
+                const CustomSvgImage(
+                  path: AppImages.locationIcon8,
                   height: 20,
                 ),
               ],
@@ -53,7 +54,7 @@ class BottomDetailsComponent extends StatelessWidget {
           ),
           Container(
             height: MediaQuery.of(context).size.height * 0.04,
-            width: MediaQuery.of(context).size.width * 0.3,
+            width: Sizes.availableScreenWidth(context) * 0.3,
             decoration: BoxDecoration(
               border: Border.all(
                 color: Colors.grey[800]!,
@@ -70,10 +71,10 @@ class BottomDetailsComponent extends StatelessWidget {
                   context,
                   'احجز السياره',
                 ),
-                SvgPicture.asset(
-                  AppImages.carContainerIcon9,
+                const CustomSvgImage(
+                  path: AppImages.bookIcon9,
                   height: 20,
-                ),
+                )
               ],
             ),
           ),

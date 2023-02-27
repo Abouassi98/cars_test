@@ -35,8 +35,7 @@ dependencies:
 
   # The following adds the Cupertino Icons font to your application.
   # Use with the CupertinoIcons class for iOS style icons.
-  cupertino_icons: ^1.0.2
-  flutter_svg: ^2.0.1
+  cupertino_icons: ^1.0.5
 
   
   #StateManagement & DI
@@ -48,8 +47,10 @@ dependencies:
 
   #Images
   lottie: ^1.2.1
+  flutter_svg_image: ^1.1.0+1
+  #this package alternative to flutter_svg cuz it set currentColor to black by default and this issue didn't solve 
 
-
+  #adaptive
   flutter_platform_widgets: ^3.0.0
 
 
@@ -62,8 +63,8 @@ dev_dependencies:
   freezed: ^2.3.2
   json_serializable: ^6.6.1
   riverpod_generator: ^1.2.0
-  riverpod_lint:
-  custom_lint:
+  riverpod_lint: ^1.0.1
+  custom_lint: ^0.2.5
 
   # The "flutter_lints" package below contains a set of recommended lints to
   # encourage good coding practices. The lint set provided by the package is

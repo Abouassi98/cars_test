@@ -4,7 +4,6 @@ import '../../../../core/domain/use_cases/use_case_base.dart';
 
 import '../../data/repos/get_car_repo.dart';
 
-
 import '../entities/car.dart';
 import '../repos/i_get_cars_repo.dart';
 

@@ -1,10 +1,8 @@
 import 'package:riverpod_annotation/riverpod_annotation.dart';
 
-
 import '../../domain/entities/car.dart';
 import '../../domain/repos/i_get_cars_repo.dart';
 import '../data_sources/get_car_local_data_source.dart';
-
 
 part 'get_car_repo.g.dart';
 
@@ -27,7 +25,5 @@ class GetCarRepo implements IGetCarRepo {
     final user = await localDataSource.getCar();
 
     return List<Car>.from(user.cars.map((e) => e.toEntity()));
-
-
   }
 }

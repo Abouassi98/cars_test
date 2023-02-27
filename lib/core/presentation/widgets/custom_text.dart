@@ -138,7 +138,6 @@ class CustomText extends Text {
           color: color ?? Colors.black,
           weight: weight,
           height: height,
-          
           textAlign: textAlign,
           underline: underline,
           maxLines: maxLines,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import '../../../../core/presentation/widgets/cusomt_svg_image.dart';
 
 class CustomContainer extends StatelessWidget {
   final String image, text, num;
@@ -24,12 +24,10 @@ class CustomContainer extends StatelessWidget {
           color: Colors.grey[200],
           borderRadius: const BorderRadius.all(Radius.circular(5))),
       child: Column(
-        //mainAxisSize: MainAxisSize.min,
         children: [
-          SvgPicture.asset(
-            image,
-            height: isHome == true ? 10 : 22,
-            width: isHome == true ? 10 : 20,
+          CustomSvgImage(
+            height: isHome == true ? 12 : 30,
+            path: image,
           ),
           Text(
             text,

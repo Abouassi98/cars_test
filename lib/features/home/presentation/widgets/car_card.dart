@@ -1,8 +1,7 @@
-import 'package:flutter_svg/svg.dart';
-
 import '../../../../core/presentation/styles/app_images.dart';
 import 'package:flutter/material.dart';
 
+import '../../../../core/presentation/widgets/cusomt_svg_image.dart';
 import 'custom_container.dart';
 
 import '../../domain/entities/car.dart';
@@ -46,8 +45,8 @@ class CustomCarCard extends StatelessWidget {
                       children: [
                         CircleAvatar(
                             backgroundColor: Colors.white.withOpacity(0.6),
-                            child: SvgPicture.asset(
-                              AppImages.carContainerIcon6,
+                            child: const CustomSvgImage(
+                              path: AppImages.favIcon6,
                               height: 20,
                             )),
                         const SizedBox(
@@ -55,10 +54,12 @@ class CustomCarCard extends StatelessWidget {
                         ),
                         CircleAvatar(
                             backgroundColor: Colors.white.withOpacity(0.6),
-                            child: SvgPicture.asset(
-                              AppImages.carContainerIcon5,
+                            child:const CustomSvgImage(
+                              path:  AppImages.shareIcon5,
                               height: 20,
-                            )),
+                            )
+                            
+                            ),
                       ],
                     ),
                     InkWell(
@@ -83,12 +84,11 @@ class CustomCarCard extends StatelessWidget {
             child: Row(
               textDirection: TextDirection.rtl,
               mainAxisAlignment: MainAxisAlignment.center,
-              
               children: [
                 Visibility(
                   visible: !isHome,
                   child: CustomContainer(
-                    image: AppImages.carContainerIcon4,
+                    image: AppImages.slinderIcon4,
                     text: 'المحرك/سلندر',
                     num: carData.time,
                     isHome: isHome,

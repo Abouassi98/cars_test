@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../../core/presentation/styles/sizes.dart';
 import '../../../../core/presentation/widgets/custom_text.dart';
 
 class CarDetailsItem extends StatelessWidget {
@@ -28,7 +29,7 @@ class CarDetailsItem extends StatelessWidget {
         mainAxisAlignment: MainAxisAlignment.start,
         children: [
           SizedBox(
-            width: MediaQuery.of(context).size.width * 0.35,
+            width: Sizes.availableScreenWidth(context) * 0.35,
             child: Row(
               mainAxisAlignment: MainAxisAlignment.start,
               textDirection: TextDirection.rtl,

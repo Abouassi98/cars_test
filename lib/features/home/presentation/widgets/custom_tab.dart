@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import '../../../../core/presentation/widgets/custom_text.dart';
 
 class CustomTab extends StatelessWidget {
- final String text;
+  final String text;
   const CustomTab({Key? key, required this.text}) : super(key: key);
 
   @override

@@ -82,9 +82,7 @@ class CustomTextFormField extends StatelessWidget {
               filled: true,
               fillColor: Theme.of(context).inputDecorationTheme.fillColor,
               hintText: hintText,
-              
               hintStyle: TextStyle(
-                
                 fontWeight: FontWeight.bold,
                 fontSize: Sizes.font16,
                 color: Theme.of(context).hintColor,
